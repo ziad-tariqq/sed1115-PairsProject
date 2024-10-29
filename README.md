@@ -102,3 +102,28 @@ Our testing process includes:
 - **Error Checking**: Implementing UART data checks to handle any potential errors in incoming data.
 
 Debugging logs and observations are documented in the project notes to support the final report and adjustments.
+
+# References
+
+We referenced code from The Raspberry Pi UART Documentation to assist with setting up and managing UART communication. Below are specific examples and their applications within this project.
+
+### UART Initialization Example
+
+- **Code Referenced**: `uart = UART(1, baudrate=9600, tx=Pin(8), rx=Pin(9))`
+- **How It Helped**: This setup example guided us in configuring UART communication, including specifying `baudrate`, `tx`, `rx`, `bits`, `parity`, and `stop` settings. It provided a foundation for establishing reliable serial communication between the Picos.
+
+### Reading Data Over UART
+
+- **Code Referenced**:
+    ```python
+    if uart.any():
+        data = uart.read()
+    ```
+- **How It Helped**: This snippet demonstrated how to check for and read incoming UART data, ensuring that data was only read when available. We applied this to conditionally process incoming messages from the other Pico.
+
+### Using `uart.any()` for Incoming Data
+
+- **Code Referenced**: `if uart.any():`
+- **How It Helped**: This function allowed us to implement a more efficient data flow check by verifying that data was ready before attempting to read, preventing errors from empty reads and ensuring the program only reads when necessary.
+
+These references supported the setup of core UART functions. All application logic, including integrating ADC readings with PWM and managing data flow between devices, was independently developed for this project.
