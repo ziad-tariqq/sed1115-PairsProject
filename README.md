@@ -3,8 +3,21 @@
 ## Project Overview
 This project demonstrates the use of UART communication, PWM signal control, and ADC input to create a basic microcontroller system for hardware control. The code is designed to adjust the PWM duty cycle based on ADC input, allowing for dynamic hardware control. Additionally, UART enables serial communication to monitor or adjust system parameters in real-time.
 
-## Acknowledgment
-This project was inspired by publicly available project structures, with modifications for enhanced functionality, readability, and modularity. Developed as part of an educational initiative, all reused components are credited appropriately, and no licenses are violated.
+## Project Status
+**Status**: Green  
+The project is Completed and ready for demonstration.
+
+## Work Plan and Milestones
+Outlined below is our work plan, including major tasks and target completion dates:
+- **Code Setup and Initialization** - Completed
+- **UART and ADC Testing** - Completed
+- **PWM Control Integration** - Completed
+- **Final Testing and Adjustments** - Completed
+- **Documentation and Submission** - Completed
+
+This plan is being followed to ensure timely completion, and all tasks are meeting or are expected to meet their deadlines.
+
+---
 
 ## Table of Contents
 - [Features](#features)
@@ -13,6 +26,9 @@ This project was inspired by publicly available project structures, with modific
 - [Setup Instructions](#setup-instructions)
 - [Code Structure and Functionality](#code-structure-and-functionality)
 - [Usage](#usage)
+- [Testing and Debugging](#testing-and-debugging)
+
+---
 
 ## Features
 - **UART Communication**: Enables serial data transmission and reception.
@@ -20,14 +36,20 @@ This project was inspired by publicly available project structures, with modific
 - **ADC Integration**: Reads analog data and converts it to a digital value for PWM control.
 - **Modular Code Design**: Ensures code clarity and ease of modification.
 
+---
+
 ## Hardware Requirements
 - Microcontroller (e.g., Raspberry Pi Pico)
 - Circuit setup for UART and PWM functionality
 - Jumper wires and breadboard
 
+---
+
 ## Software Requirements
 - MicroPython or CircuitPython installed on the microcontroller
 - UART-compatible serial monitor software (e.g., PuTTY or Arduino Serial Monitor)
+
+---
 
 ## Setup Instructions
 
@@ -40,19 +62,23 @@ This project was inspired by publicly available project structures, with modific
 2. Clone this repository or copy the script directly to your microcontroller.
 3. Ensure the serial monitor software is configured to match the UART settings (baud rate: 9600).
 
+---
+
 ## Code Structure and Functionality
 
-- `setup_uart(baud_rate=9600, tx_pin=8, rx_pin=9)`  
+- **setup_uart(baud_rate=9600, tx_pin=8, rx_pin=9)**  
   Initializes UART communication with specified baud rate and TX/RX pins.
 
-- `setup_adc(adc_pin=26)`  
+- **setup_adc(adc_pin=26)**  
   Configures ADC on the specified pin to read analog values.
 
-- `setup_pwm(pwm_pin=0, frequency=1000, duty_cycle=32768)`  
+- **setup_pwm(pwm_pin=0, frequency=1000, duty_cycle=32768)**  
   Sets up PWM on the specified pin, with a default frequency and duty cycle.
 
-- `main_control_loop(uart, pwm, adc)`  
+- **main_control_loop(uart, pwm, adc)**  
   Main loop to read ADC values and adjust PWM duty cycle. Also checks and processes incoming data on UART.
+
+---
 
 ## Usage
 
@@ -66,3 +92,13 @@ This project was inspired by publicly available project structures, with modific
 
 ### Notes
 - Default frequency and duty cycle can be modified by changing parameters in `setup_pwm()`.
+
+---
+
+## Testing and Debugging
+Our testing process includes:
+- **UART Communication Testing**: Verifying data transmission and reception through the serial monitor.
+- **ADC to PWM Mapping**: Ensuring accurate adjustment of PWM duty cycle based on ADC input values.
+- **Error Checking**: Implementing UART data checks to handle any potential errors in incoming data.
+
+Debugging logs and observations are documented in the project notes to support the final report and adjustments.
